@@ -1,8 +1,6 @@
 const db_message = require('../models/message');
 
-module.exports = function(req, res, next) {
-    console.log(req.query);
-    
+module.exports = function(req, res, next) {    
     let query = {};
 
     if(req.query.channel) {
@@ -25,9 +23,7 @@ module.exports = function(req, res, next) {
             path: 'user',
             select: 'name'
         })
-        .then((messages) => {
-            console.log(messages);
-            
+        .then((messages) => {           
             res.status(200).json(messages);
     });
 };

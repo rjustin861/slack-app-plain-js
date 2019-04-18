@@ -124,7 +124,6 @@ document.addEventListener('keyup', function(e) {
 
         postMessage(input_message.value, selected_channel)
             .then((message) => {
-                console.log(message);
                 
                 const li = createMessageElement(message._id, message.user.name, message.body, message.likes, message.createdDate);
                 messages_container.appendChild(li);
@@ -155,7 +154,6 @@ document.addEventListener('click', function(e) {
         getMessagesByChannelId(selected_channel)
             .then((messages) => {
                 messages.forEach((message) => {
-                    console.log(message);
                     
                     const li = createMessageElement(message._id, message.user.name, message.body, message.likes, message.createdDate);
                     messages_container.appendChild(li);
