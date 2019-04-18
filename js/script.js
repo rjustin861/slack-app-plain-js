@@ -106,7 +106,8 @@ const createMessageElement = (id, author, message, likes, createdDate) => {
 }
 
 const format_date = (createdDate) => {
-    return (new Date(createdDate).getDate() + 1) + '-' + (new Date(createdDate).getMonth() + 1) + '-' + new Date(createdDate).getFullYear() +  ' ' + new Date(createdDate).getHours() + ':' + new Date(createdDate).getMinutes();
+    //return (new Date(createdDate).getDate() + 1) + '-' + (new Date(createdDate).getMonth() + 1) + '-' + new Date(createdDate).getFullYear() +  ' ' + new Date(createdDate).getHours() + ':' + new Date(createdDate).getMinutes();
+    return moment(createdDate).format('DD-MM-YYYY HH:mm');
 }
 
 const scrollToBottom = () => {
